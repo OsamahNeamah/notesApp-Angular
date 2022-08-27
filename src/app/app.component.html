@@ -1,0 +1,10 @@
+<div class="mycontainer">
+  <div class="row">
+    <aside class="col-sm-12 col-md-6">
+      <app-aside (display)="display($event)" (submitText)="changeFormtype($event)" [newNote]="newNote" (noteToUpdate)=update($event)></app-aside>
+    </aside>
+    <main class="col-sm-12 col-md-6">
+      <app-main [displayForm]="displayForm" [SubmitType]="submitText" (newNote)="addnewNote($event)" [content]="content" [title]="title"></app-main>
+    </main>
+  </div>
+</div>

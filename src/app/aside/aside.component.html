@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-6 aside_header ">My notes</div>
+  <div class="col-6"><button type="button" class="btn btn-success" (click)="displayAddForm()">+</button></div>
+</div>
+<div class="row">
+  <div class="col-11">
+    <div *ngIf="!Notes || Notes.length==0"><h3>No notes to display</h3></div>
+    <ul class="list-group" *ngIf="Notes" style="list-style-type: none;">
+      <li *ngFor="let note of Notes; let i=index" style="margin-bottom: 5px; margin-top: 10px;">
+        <div class="row">
+          <div class="col-4"><span style="color:blue; font-size: 18px;">{{note}}</span></div>
+          <div class="col-4"><button class="btn btn-primary" (click)="displayEditForm(note)">Edit</button></div>
+          <div class="col-4"><button class="btn btn-danger" (click)="deleteNote(note)">Delete</button></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
